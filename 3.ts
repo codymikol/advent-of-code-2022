@@ -1,7 +1,6 @@
 import * as fs from 'fs';
 import * as path from "path";
 import * as R from 'ramda'
-console.log('asdasd')
 const input = fs.readFileSync(path.join(__dirname, './input/3.txt')).toString();
 
 const values = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
