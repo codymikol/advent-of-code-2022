@@ -7,5 +7,8 @@ fun main() {
     listOf(4, 14).forEach { println("The start of message for for count $it is: ${findStartOfMessage(it, input)}") }
 }
 
-fun findStartOfMessage(encoderSize: Int, message: String): Int = message.windowed(encoderSize)
-    .indexOfFirst { s -> s.toList().let { it.distinct().size == it.size } } + encoderSize
+fun findStartOfMessage(encoderSize: Int, message: String): Int = message
+    .windowed(encoderSize)
+    .indexOfFirst(String::allUniqueChars) + encoderSize
+
+fun String.allUniqueChars() = toList().let { it.distinct().size == it.size }
