@@ -11,4 +11,4 @@ fun findStartOfMessage(encoderSize: Int, message: String): Int = message
     .windowed(encoderSize)
     .indexOfFirst(String::allUniqueChars) + encoderSize
 
-fun String.allUniqueChars() = toList().let { it.distinct().size == it.size }
+fun String.allUniqueChars() = this.toSet().size == this.length
